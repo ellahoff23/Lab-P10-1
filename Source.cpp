@@ -3,10 +3,12 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>
+#include <stdlib.h>
+#include <stddef.h>
 
 using namespace std;
 
-string stringScramble(const string& word) {
+string stringScramble(const string word) {
     if (word.length() <= 3) {
 
         return word;
@@ -38,12 +40,14 @@ int main() {
     size_t pos = 0;
     while ((pos = line.find(' ', pos)) != string::npos) {
         string word = line.substr(0, pos);
+        cout << "*" << word << "*" << endl;
         words.push_back(word);
         line.erase(0, pos + 1); 
+        pos = 0;
     }
     words.push_back(line);
 
-    for (const string& word : words) {
+    for (const string word : words) {
         string scrambledWord = stringScramble(word);
         cout << scrambledWord << " ";
     }
