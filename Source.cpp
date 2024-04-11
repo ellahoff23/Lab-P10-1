@@ -47,7 +47,7 @@ int main() {
         string scrambledWord = stringScramble(word);
         cout << scrambledWord << " ";
     }
-
+     
     cout << endl;
 
     return 0;
